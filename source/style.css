@@ -1,7 +1,30 @@
 body {
-  background-image: url('/assets/image.jpg');
+  background-image: url('/assets/couple01.jpg');
   background-size: cover;        /* cobre toda a tela */
   background-position: center;   /* centraliza a imagem */
   background-repeat: no-repeat;  /* evita repetição */
   background-attachment: fixed;  /* opcional: efeito "parallax" */
+}
+
+#envelope01{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.fade-animation {
+    animation-name: fadeOut;
+    animation-duration: 3s;
+    /* animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate; */
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
