@@ -46,7 +46,14 @@
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  playAudioYes();
+});
 
+function playAudioYes(){
+  const song = document.getElementById('song01').play();
+  song.volume = 0.9;
+};
 
 const envelope = document.getElementById('envelope01');
 
@@ -57,7 +64,7 @@ const images = [
   '/assets/DebaixoFechado.png',
   '/assets/photo05.jpeg',
   '/assets/DebaixoAberto.png',
-  '/assets/heartTransparent.png'
+  '/assets/LoveYou.png'
 ];
 
 let index = 0;
