@@ -1,41 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image" href="/assets/heartTransparent.png"/>
-    <title>Love</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image" href="/assets/heartTransparent.png"/>
+  <title>Love</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img id="envelope01" src="/assets/CimaFechado.png" alt="Envelope Icon" onclick="trocarImagem()"/>
+  <div id="envelope01" onclick="trocarImagem()"></div>
 
+  <audio id="novideo">
+    <source src="/assets/OpenSound.mp3" type="audio/mpeg">
+  </audio>
 
+  <audio id="song01">
+    <source src="/assets/LoveSong.mp3" type="audio/mpeg">
+  </audio>
 
-
-
-
-
-<!-- background: linear-gradient(135deg, #eb4685 0%, #ce1059 100%); -->
-
-
-
-
-
-
-
-
-
-
-    <audio id="novideo">
-        <source src="/assets/OpenSound.mp3" type="audio/mpeg">
-    </audio>
-
-    <video id="song01" width="0" height="0" controls>
-        <source src="/assets/LoveSong.mp3" 
-           type="video/mp4">
-    </video>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

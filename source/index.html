@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Carregamento com Botão</title>
+    <link rel="icon" type="image" href="/assets/heartTransparent.png"/>
+    <title>Love</title>
     <style>
         * {
             margin: 0;
@@ -213,20 +214,7 @@
             mainContent.style.animation = 'fadeInUp 0.5s ease reverse forwards';
             
             setTimeout(function() {
-                // Aqui você pode redirecionar para outra página
-                // ou mostrar o conteúdo real do seu site
-                // alert('🎊 Experiência iniciada! Agora você pode adicionar o conteúdo do seu site aqui.');
-                
-                // // Exemplo: mudar o conteúdo
-                // mainContent.innerHTML = `
-                //     <h1>🌟 Bem-vindo ao Site!</h1>
-                //     <p>Esta é a área principal da sua aplicação.</p>
-                //     <div style="margin-top: 30px;">
-                //         <button class="start-button" onclick="location.reload()">
-                //             Recarregar Página
-                //         </button>
-                //     </div>
-                // `;
+                // redirecionar para outra página
                 window.location.href = 'main.html';
                 mainContent.style.animation = 'fadeInUp 0.5s ease forwards';
             }, 500);

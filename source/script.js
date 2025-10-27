@@ -1,78 +1,27 @@
-// const envelope = document.getElementById('envelope01');
-
-// // lista das imagens (use os caminhos corretos)
-// const images = [
-//   '/assets/CimaFechado.png',
-//   '/assets/MsgAqui.png',
-//   '/assets/CimaAberto.png',
-//   '/assets/DebaixoFechado.png',
-//   '/assets/photo05.jpeg',
-//   '/assets/DebaixoAberto.png'
-// ];
-
-// let index = 0;
-// let trocando = false;
-
-// function trocarImagem() {
-//   if (trocando) return; // evita múltiplos cliques
-//   document.getElementById('novideo').play();
-//   trocando = true;
-
-//   // começa o fade-out
-//   envelope.style.opacity = 0;
-
-//   // quando o fade-out termina...
-//   envelope.addEventListener('transitionend', function mudarImagem() {
-//     // troca a imagem
-//     index = (index + 1) % images.length;
-//     envelope.src = images[index];
-
-//     // volta o fade-in
-//     envelope.style.opacity = 1;
-
-//     // remove o listener (pra não acumular)
-//     envelope.removeEventListener('transitionend', mudarImagem);
-
-//     // libera o clique quando o fade-in terminar
-//     envelope.addEventListener('transitionend', function liberarClique() {
-//       trocando = false;
-//       envelope.removeEventListener('transitionend', liberarClique);
-//     });
-//   });
-// }
-
-// // troca a cada 3 segundos (pode ajustar)
-// // setInterval(trocarImagem, 3000);
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
-  playAudioYes();
-});
-
-function playAudioYes(){
-  const song = document.getElementById('song01').play();
+  const song = document.getElementById('song01');
   song.volume = 0.9;
-};
+  song.play().catch(() => {}); // evita erro se autoplay for bloqueado
+});
 
 const envelope = document.getElementById('envelope01');
 
-const images = [
-  '/assets/CimaFechado.png',
-  '/assets/MsgAqui.png',
-  '/assets/CimaAberto.png',
-  '/assets/DebaixoFechado.png',
-  '/assets/photo05.jpeg',
-  '/assets/DebaixoAberto.png',
-  '/assets/LoveYou.png'
+const etapas = [
+  '<img src="/assets/CimaFechado.png" alt="Cima Fechado">',
+  '<div class="card"><h1>Título Bonito</h1><p>Esse texto aparece sobre a imagem de fundo.</p></div>',
+  // ',<div onload="mostrarCarta()"></div>', 
+  '<img src="/assets/CimaAberto.png" alt="Cima Aberto">',
+  '<img src="/assets/DebaixoFechado.png" alt="Envelope Fechado">',
+  '<img src="/assets/photo02.jpg" alt="Foto">',
+  '<img src="/assets/DebaixoAberto.png" alt="Envelope Aberto">',
+  '<img src="/assets/LoveYou.png" alt="Eu te Amo!💖">'
 ];
 
 let index = 0;
 let trocando = false;
 
-// partes específicas que terão transição
-const transicoesEspeciais = [0, 3]; 
-// (exemplo: 0 -> 1 e 3 -> 4 terão fade)
+// partes que terão transição suave (fade)
+const transicoesEspeciais = [0, 3];
 
 function trocarImagem() {
   if (trocando) return;
@@ -82,16 +31,14 @@ function trocarImagem() {
   const precisaDeTransicao = transicoesEspeciais.includes(index);
 
   if (precisaDeTransicao) {
-    // começa fade-out
     envelope.style.opacity = 0;
 
-    envelope.addEventListener('transitionend', function mudarImagem() {
-      index = (index + 1) % images.length;
-      envelope.src = images[index];
+    envelope.addEventListener('transitionend', function mudarEtapa() {
+      index = (index + 1) % etapas.length;
+      envelope.innerHTML = etapas[index];
 
-      // volta fade-in
       envelope.style.opacity = 1;
-      envelope.removeEventListener('transitionend', mudarImagem);
+      envelope.removeEventListener('transitionend', mudarEtapa);
 
       envelope.addEventListener('transitionend', function liberarClique() {
         trocando = false;
@@ -99,9 +46,15 @@ function trocarImagem() {
       });
     });
   } else {
-    // troca sem animação
-    index = (index + 1) % images.length;
-    envelope.src = images[index];
+    index = (index + 1) % etapas.length;
+    envelope.innerHTML = etapas[index];
     trocando = false;
   }
+}
+
+// exibe a primeira etapa logo no início
+envelope.innerHTML = etapas[0];
+
+function mostrarCarta(){
+  console.log("Carta mostrada");
 }

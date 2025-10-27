@@ -1,30 +1,48 @@
 body {
   background-image: url('/assets/couple01.jpg');
-  background-size: cover;        /* cobre toda a tela */
-  background-position: center;   /* centraliza a imagem */
-  background-repeat: no-repeat;  /* evita repetição */
-  background-attachment: fixed;  /* opcional: efeito "parallax" */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-#envelope01{
+#envelope01 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70vw;
+  max-width: 700px;
+  text-align: center;
   opacity: 1;
   transition: opacity 1.5s ease-in-out;
 }
 
-.fade-animation {
-    animation-name: fadeOut;
-    animation-duration: 3s;
-    /* animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-direction: alternate; */
+/* textos ou HTML inseridos */
+#envelope01 p, #envelope01 h2 {
+  color: white;
+  font-size: 2em;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
 }
 
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+#envelope01 img {
+  width: 100%;
+  border-radius: 10px;
 }
+
+.card {
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 12px;
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url('/assets/MsgAqui.png');
+  background-size: cover;       
+  background-position: center;  
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
