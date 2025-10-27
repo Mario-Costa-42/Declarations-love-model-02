@@ -8,8 +8,12 @@ const envelope = document.getElementById('envelope01');
 
 const etapas = [
   '<img src="/assets/CimaFechado.png" alt="Cima Fechado">',
-  '<div class="card"><h1>Título Bonito</h1><p>Esse texto aparece sobre a imagem de fundo.</p></div>',
-  // ',<div onload="mostrarCarta()"></div>', 
+  `<div>
+  <br><br><br><br>
+    <h1>Título da sua carta virtual aqui</h1>
+    <p style="color: magenta;">Escreva uma mensagem para o seu bem com todo carinho aqui, você pode pedir 
+    por outras mudanças no site também😉</p>
+  </div>`,
   '<img src="/assets/CimaAberto.png" alt="Cima Aberto">',
   '<img src="/assets/DebaixoFechado.png" alt="Envelope Fechado">',
   '<img src="/assets/photo02.jpg" alt="Foto">',
